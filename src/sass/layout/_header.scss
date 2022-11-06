@@ -1,0 +1,369 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 23px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+
+  @include tablet {
+    margin-right: 211px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @include desktop {
+    margin-right: 258px;
+    padding-top: 40px;
+  }
+
+  &__img {
+    width: 101px;
+    height: 25px;
+    @include tablet {
+      width: 125px;
+      height: 31px;
+    }
+    @include desktop {
+      width: 192px;
+      height: 48px;
+    }
+  }
+}
+
+.menu-open {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 45px;
+  @include tablet {
+    margin-right: 99px;
+  }
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  cursor: pointer;
+
+  @include desktop {
+    display: none;
+    @include animation(fill, null, null, 250ms, $timing-function);
+  }
+
+  &__icon {
+    fill: $secondary-color-text;
+  }
+
+  &:hover .menu-open__icon,
+  &:focus .menu-open__icon {
+    fill: $accent-color;
+  }
+}
+
+.menu-open .menu-open__close {
+  display: block;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+}
+.menu-open.cross .menu-open__close {
+  display: none;
+}
+.menu-open.cross .menu-open__open {
+  display: block;
+}
+.menu-open .menu-open__open {
+  display: none;
+  @media screen and (max-width: 480px) {
+    display: block;
+  }
+}
+
+.tel-open {
+  padding-bottom: 2px;
+  padding-top: 2px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  &__icon {
+    fill: #008cef;
+  }
+  @include animation(fill, null, null, 250ms, $timing-function);
+
+  &:hover .tel-open__icon,
+  &:focus .tel-open__icon {
+    fill: #224fe0;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.lang {
+  @include font(14px, 700, 1.29, 0.01em);
+  font-family: 'Caviar Dreams', sans-serif;
+  border: none;
+  cursor: pointer;
+  color: #bdbdbd;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 37px;
+  @include desktop {
+    margin-right: 95px;
+    height: 50px;
+  }
+
+  &_item {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.tablet-contacts {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.tab-contacts {
+  &__item {
+    &--top {
+      padding-top: 10px;
+
+      @include tablet {
+        padding-top: 0px;
+        padding-bottom: 5px;
+      }
+    }
+    &--bottom {
+      padding-bottom: 10px;
+
+      @include tablet {
+        padding-top: 5px;
+        padding-bottom: 0px;
+      }
+    }
+  }
+
+  // &__item:not(:last-child) {
+  //   // margin-bottom: 10px;
+  // }
+
+  &__link {
+    @include font(16px, null, 1.25, 0.01em);
+    font-family: 'Cera Pro', sans-serif;
+    color: $primary-color-text;
+    @include animation(color, null, null, 250ms, $timing-function);
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+
+  &__icon {
+    fill: #008cef;
+  }
+}
+
+.nav-right {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+.tab-nav-right {
+  @include tablet {
+    display: flex;
+    gap: 38px;
+  }
+}
+
+.nav-ring__tel {
+  position: relative;
+  @include tablet {
+    display: none;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  z-index: 3;
+  top: 45px;
+  right: -65px;
+  opacity: 1;
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+}
+.modal-phone {
+  position: relative;
+  width: 162px;
+  height: 82px;
+  padding: 16px 6px;
+  border-radius: 2px;
+  background-color: $primary-bgc;
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: -12px;
+    left: 50%;
+    margin: auto;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 2px;
+    background-color: $primary-bgc;
+    rotate: 45deg;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+.wrapper:not(.is-open) {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.wrapper.is-open {
+  transform: translateX(0);
+}
+.mobile-phones {
+  list-style: none;
+
+  &__list {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include font(16px, 400, 1.25, 0.01em);
+    color: $primary-color-text;
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+}
+
+.desktop-nav {
+  @media screen and (max-width: 1439px) {
+    display: none;
+  }
+
+  @include desktop {
+    margin-right: auto;
+  }
+}
+
+.nav-menu {
+  display: flex;
+  gap: 56px;
+
+  &__icon {
+    position: absolute;
+    bottom: 39%;
+    left: 110%;
+    transform: rotate(180deg);
+    fill: $header-triangle-color;
+  }
+
+  &__link {
+    padding: 32px 0;
+    position: relative;
+    @include font(18px, null, 1.17, 0.01em);
+    font-family: 'Caviar Dreams', sans-serif;
+    text-align: center;
+    color: $primary-color-text;
+    @include animation(color, null, null, 250ms, $timing-function);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $accent-color;
+    }
+
+    &--submenu {
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+}
+
+.submenu-wrap {
+  display: none;
+  width: 140px;
+  height: 114px;
+  padding-top: 35px;
+
+  position: absolute;
+  top: 10%;
+  left: -40%;
+  border-radius: 0 0 70px 70px;
+  background: transparent;
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.submenu {
+  &__item:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    @include font(16px, null, 1.19, 0.01em);
+    font-family: 'Caviar Dreams', sans-serif;
+    color: $primary-color-text;
+    @include animation(color, null, null, 250ms, $timing-function);
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+}
+
+.nav-menu__item:hover .submenu-wrap,
+.nav-menu__item:focus .submenu-wrap {
+  display: block;
+}
+
+.nav-menu__item:hover .nav-menu__icon,
+.nav-menu__item:focus .nav-menu__icon {
+  transform: rotate(360deg);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}

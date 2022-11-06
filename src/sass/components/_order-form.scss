@@ -1,0 +1,325 @@
+.order-section {
+  padding-bottom: 60px;
+
+  @include desktop {
+    padding: 0;
+  }
+}
+
+.order-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include mobile {
+    max-width: 480px;
+  }
+
+  @include tablet {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
+}
+
+.order-form {
+  max-width: 280px;
+
+  @include tablet {
+    max-width: 400px;
+    position: relative;
+    margin: auto;
+  }
+  @include desktop {
+    min-width: 555px;
+  }
+}
+
+.order-form__title {
+  margin-bottom: 28px;
+  @include font(18px, 700, 1.28, null);
+  text-transform: uppercase;
+  color: $secondary-color-text;
+
+  @include tablet {
+    @include font(24px, 700, 1.28, null);
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  @include desktop {
+    @include font(36px, 700, 1.28, null);
+    margin-bottom: 44px;
+  }
+}
+
+.order-form__field {
+  width: 280px;
+  height: 44px;
+  position: relative;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid $secondary-color-text;
+  appearance: none; /* remove arrow        */
+  -webkit-appearance: none; /* remove arrow Chrome */
+  -moz-appearance: none; /* remove arrow FF     */
+
+  @include tablet {
+    width: 400px;
+  }
+  @include desktop {
+    width: 555px;
+  }
+}
+
+.last {
+  margin-bottom: 44px;
+}
+
+.order-form__field input {
+  border: none;
+  border-bottom: 1px solid $secondary-color-text;
+  width: 100%;
+  height: 44px;
+  @include animation(border-bottom, null, null);
+
+  @include tablet {
+    width: 400px;
+  }
+  @include desktop {
+    width: 555px;
+  }
+  &:focus,
+  &:hover {
+    outline: none;
+    border-bottom: 2px solid $accent-color;
+  }
+  &:focus + .order-form__field-label {
+    transform: translateY(-34px);
+    @include font(14px, 400, 1.25, null);
+  }
+  &:not(:placeholder-shown) + .order-form__field-label {
+    transform: translateY(-34px);
+    @include font(14px, 400, 1.25, null);
+  }
+  &::placeholder {
+    color: $primary-bgc;
+  }
+}
+
+.order-form__field label {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+
+  transition: transform 250ms linear;
+
+  color: $primary-color-text;
+  @include font(16px, 400, 1.25, null);
+
+  @include animation(color, null, null);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  @include desktop {
+    @include font(18px, 400, 1.25, null);
+  }
+}
+
+.order-form__message {
+  position: relative;
+  width: 280px;
+  margin-bottom: 40px;
+
+  @include tablet {
+    width: 400px;
+  }
+  @include desktop {
+    margin-bottom: 24px;
+    width: 555px;
+  }
+}
+
+.order-form__message label {
+  @include animation(color, null, null);
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  @include desktop {
+    @include font(18px, 400, 1.25, null);
+  }
+}
+
+.order-form__message textarea {
+  box-sizing: border-box;
+  resize: none;
+  width: 280px;
+  height: 199px;
+
+  border: 1px solid $secondary-color-text;
+  border-radius: 50px 0px;
+  outline: none;
+  padding-left: 20px;
+  padding-top: 22px;
+  @include tablet {
+    width: 400px;
+  }
+  @include desktop {
+    width: 555px;
+  }
+
+  @include animation(border, null, null);
+
+  &:focus,
+  &:hover {
+    border: 2px solid $accent-color;
+  }
+}
+
+.order-form__message textarea::placeholder {
+  @include font(16px, 400, 1.25, null);
+
+  position: absolute;
+  top: 22px;
+
+  color: $placeholder-color;
+  margin: 0;
+
+  @include desktop {
+    @include font(18px, 400, 1.25, null);
+  }
+}
+
+.order-form__icon {
+  position: absolute;
+  fill: $placeholder-color;
+  top: 180px;
+  right: 23px;
+}
+
+.order-form__instruction {
+  @include font(16px, 400, 1.25, null);
+
+  color: $placeholder-color;
+  @include desktop {
+    @include font(18px, 400, 1.25, null);
+  }
+}
+
+.br {
+  @include desktop {
+    display: none;
+  }
+}
+
+.button-send {
+  width: 280px;
+  height: 56px;
+
+  @include font(16px, 700, 1.25, null);
+  color: $secondary-color-text;
+
+  outline: none;
+  border: none;
+
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  background-color: $footer-bgc;
+  box-shadow: -10px -10px 20px $primary-bgc,
+    10px 10px 20px rgba(72, 121, 150, 0.1),
+    5px 5px 10px rgba(72, 121, 150, 0.25), -5px -5px 10px $primary-bgc;
+  border-radius: 30.5px;
+
+  @include tablet {
+    max-width: 177px;
+    @include centered-flex;
+    margin-left: auto;
+  }
+
+  @include animation(color, background-color, box-shadow);
+  &:focus,
+  &:hover {
+    color: $primary-color-text;
+    background-color: $accent-color;
+    box-shadow: -10px -10px 20px $primary-bgc,
+      10px 10px 20px rgba(16, 27, 34, 0.1), 5px 5px 10px rgba(16, 16, 16, 0.25),
+      -5px -5px 10px $primary-bgc;
+  }
+}
+
+.choose-menu:focus,
+.choose-menu:hover {
+  @include animation(border-bottom, null, null);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid $accent-color;
+  width: 100%;
+  height: 44px;
+
+  @include tablet {
+    width: 400px;
+  }
+  @include desktop {
+    width: 555px;
+  }
+}
+
+.choose-menu {
+  width: 280px;
+  height: 44px;
+  position: relative;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid $secondary-color-text;
+  appearance: none; /* remove arrow        */
+  -webkit-appearance: none; /* remove arrow Chrome */
+  -moz-appearance: none; /* remove arrow FF     */
+
+  @include tablet {
+    width: 400px;
+  }
+  @include desktop {
+    width: 555px;
+  }
+  @include desktop {
+    @include font(18px, 400, 1.25, null);
+  }
+}
+
+.menu-icon {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+}
+
+.choose-menu-one {
+  position: relative;
+}
+
+.menu-icon-one {
+  position: absolute;
+  bottom: 28px;
+  right: 0px;
+}
+
+.menu-icon-two {
+  position: absolute;
+  bottom: 28px;
+  right: 0px;
+}
+
+.menu-icon-three {
+  position: absolute;
+  bottom: 28px;
+  right: 0px;
+}

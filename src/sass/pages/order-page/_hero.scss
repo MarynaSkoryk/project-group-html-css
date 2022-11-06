@@ -1,0 +1,201 @@
+.order-page-hero {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include desktop {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.order-page {
+  @include desktop {
+    padding-left: 149px;
+  }
+}
+
+.hero-title {
+  margin-bottom: 16px;
+  @include font(24px, 700, 1.25, null);
+  text-transform: uppercase;
+  color: $secondary-color-text;
+
+  @include tablet {
+    margin-bottom: 16px;
+    @include font(36px, 700, 1.25, null);
+    text-transform: uppercase;
+    color: $secondary-color-text;
+  }
+
+  @include desktop {
+    margin-bottom: 24px;
+    @include font(48px, 700, 1.25, null);
+    text-transform: uppercase;
+    color: $secondary-color-text;
+  }
+}
+
+.hero-description {
+  display: block;
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hero-bg {
+  margin-bottom: 16px;
+  width: 100%;
+  height: 171px;
+  background-image: url('../images/mobile/take-order-page/hero-mobile@1x.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  @include retina {
+    background-image: url('../images/mobile/take-order-page/hero-mobile@2x.jpg');
+  }
+  @include retina3x {
+    background-image: url('../images/mobile/take-order-page/hero-mobile@3x.jpg');
+  }
+  @include tablet {
+    width: 336px;
+    height: 158px;
+    margin-right: 32px;
+    margin-bottom: 0;
+    background-image: url('../images/tablet/take-order-page/hero-tablet@1x.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    @include retina {
+      background-image: url('../images/tablet/take-order-page/hero-tablet@2x.jpg');
+    }
+    @include retina3x {
+      background-image: url('../images/tablet/take-order-page/hero-tablet@3x.jpg');
+    }
+  }
+
+  @include desktop {
+    width: 555px;
+    height: 400px;
+    margin-right: 32px;
+    margin-bottom: 0;
+    background-image: url('../images/desktop/take-order-page/hero-main-desktop@1x.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    @include retina {
+      background-image: url('../images/desktop/take-order-page/hero-main-desktop@2x.jpg');
+    }
+    @include retina3x {
+      background-image: url('../images/desktop/take-order-page/hero-main-desktop@3x.jpg');
+    }
+  }
+}
+
+.hero-section {
+  display: block;
+}
+
+.hero-list {
+  display: block;
+  @include tablet {
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.hero-item {
+  width: 100%;
+  // max-width: 280px;
+  @include font(16px, 300, 1.25, null);
+  color: $primary-color-text;
+  @include tablet {
+    max-width: 295px;
+    @include font(16px, 400, 1.25, null);
+    color: $primary-color-text;
+  }
+
+  @include desktop {
+    max-width: 520px;
+    @include font(18px, 300, 1.25, null);
+    color: $primary-color-text;
+  }
+}
+
+.hero-item:not(:last-child) {
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 0;
+  }
+  @include desktop {
+    margin-bottom: 24px;
+  }
+}
+
+.hero-pictures {
+  display: none;
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.hero-picture-1 {
+  width: 203px;
+  height: 203px;
+  background-image: url('../images/desktop/take-order-page/hero-sec-1-desktop@3x.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 72px 0px 0px 72px;
+  @include retina {
+    background-image: url('../images/desktop/take-order-page/hero-sec-1-desktop@2x.jpg');
+  }
+  @include retina3x {
+    background-image: url('../images/desktop/take-order-page/hero-sec-1-desktop@3x.jpg');
+  }
+}
+.hero-picture-2 {
+  width: 203px;
+  height: 203px;
+  background-image: url('../images/desktop/take-order-page/hero-sec-2-desktop@1x.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 72px 0px;
+  @include retina {
+    background-image: url('../images/desktop/take-order-page/hero-sec-2-desktop@2x.jpg');
+  }
+  @include retina3x {
+    background-image: url('../images/desktop/take-order-page/hero-sec-2-desktop@3x.jpg');
+  }
+}
+.hero-picture-3 {
+  width: 203px;
+  height: 203px;
+  background-image: url('../images/desktop/take-order-page/hero-sec-3-desktop@1x.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0px 0px 72px 0px;
+  @include retina {
+    background-image: url('../images/desktop/take-order-page/hero-sec-3-desktop@2x.jpg');
+  }
+  @include retina3x {
+    background-image: url('../images/desktop/take-order-page/hero-sec-3-desktop@3x.jpg');
+  }
+}

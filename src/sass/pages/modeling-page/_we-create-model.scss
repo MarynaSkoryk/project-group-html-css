@@ -1,0 +1,88 @@
+.we-create-model {
+  padding-bottom: 60px;
+
+  @include desktop {
+    padding-bottom: 80px;
+  }
+}
+
+.create-model-title {
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 250px;
+  text-align: left;
+  @include font(16px, 700, 1.25, null);
+  text-transform: uppercase;
+  color: $secondary-color-text;
+
+  @include tablet {
+    margin-bottom: 24px;
+    max-width: 435px;
+    text-align: left;
+    @include font(24px, 700, 1.25, null);
+    text-transform: uppercase;
+    color: $secondary-color-text;
+  }
+
+  @include desktop {
+    margin-bottom: 40px;
+    padding-left: 117px;
+    max-width: 800px;
+    text-align: left;
+    @include font(36px, 700, 1.25, null);
+    text-transform: uppercase;
+    color: $secondary-color-text;
+  }
+}
+.create-model-list {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 20px;
+
+  @include tablet {
+    margin-bottom: 60px;
+    display: flex;
+    gap: 32px;
+  }
+  @include desktop {
+    margin-bottom: 80px;
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.create-model-item {
+  max-width: 100%;
+  width: calc((100% - 20px) / 2);
+
+  @include tablet {
+    max-width: 100%;
+    width: calc((100% - 3 * 32px) / 4);
+    margin-bottom: 0;
+    padding: 0;
+  }
+  @include desktop {
+    max-width: 100%;
+    width: calc((100% - 3 * 32px) / 4);
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
+.create-model-item:nth-child(2n + 1) {
+  border-radius: 0px 0px 0px 50px;
+}
+
+.create-model-item:nth-child(2n) {
+  border-radius: 50px 0px 57px;
+}
+
+.create-model-img {
+  width: 100%;
+}
+
+.button-modeling {
+  margin: 0 auto;
+}
